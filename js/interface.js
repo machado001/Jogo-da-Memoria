@@ -1,9 +1,11 @@
 const divs = document.querySelectorAll('.box')
 
 const virarCarta =(evento) => {
-    console.log(evento.target)
-
+    let box = evento.target;
+    let boxClass = box.classList;
+    const x = boxClass.toggle('rotate');
 }
 divs.forEach(div => {
-    div.addEventListener('click',virarCarta)
+    div.addEventListener('click',virarCarta);
 })
+

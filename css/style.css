@@ -33,14 +33,17 @@ div {
     height: 80px;
     background-color: rgb(19, 24, 24);
     border-radius: 5px;
-    transition: 0.4s;
+    transition: 1s;
 }
-
-div:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 30px 2px rgb(121, 114, 114);
+.rotate{
+    transform: rotateY(180deg);
 }
+div::after {
+    content: 'oi';
+    color: aliceblue;
+    display: none;
+    
+}
+.afterVisible {
 
-div:target {
-    transform: rotate(45deg);
 }
