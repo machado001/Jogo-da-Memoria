@@ -6,8 +6,9 @@
     color: aliceblue;
     font-size: 40px;
 }
-
+/* styles */
 body {
+    background-image: ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +18,7 @@ background: radial-gradient(circle, rgba(91,97,17,0.7315301120448179) 7%, rgba(1
 }
 
 main {
-    width: 500px;
+    width: 600px;
     /* border: 5px solid rgb(0, 0, 0); */
     height: 500px;
     display: flex;
