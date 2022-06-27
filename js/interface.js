@@ -1,7 +1,5 @@
 const divs = document.querySelectorAll('.box')
-
 let divclick = false;
-
 const virarCarta = (evento) => {
     const box = evento.target;
     const imgs = document.querySelectorAll('img')
