@@ -6,15 +6,15 @@
     color: aliceblue;
     font-size: 40px;
 }
+
 /* styles */
 body {
-    background-image: ;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(91,97,17);
-background: radial-gradient(circle, rgba(91,97,17,0.7315301120448179) 7%, rgba(158,133,32,0.9668242296918768) 28%, rgba(0,0,0,1) 99%);
+    background: rgb(91, 97, 17);
+    background: radial-gradient(circle, rgba(91, 97, 17, 0.7315301120448179) 7%, rgba(158, 133, 32, 0.9668242296918768) 28%, rgba(0, 0, 0, 1) 99%);
 }
 
 main {
@@ -26,6 +26,7 @@ main {
     align-items: center;
     flex-wrap: wrap;
     border-radius: 8px;
+    animation: sair 1s linear 2s 1;
 
 }
 
@@ -36,19 +37,44 @@ div {
     height: 80px;
     background-color: rgb(45, 204, 204);
     border-radius: 5px;
-    transition: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: cartas 1s linear 0s 1, motion 1.2s linear 1s 1;
 }
-.rotate{
+
+.rotate {
+    transform: rotateY(180deg);
+
+}
+
+.rotate1 {
     transform: rotateY(180deg);
 }
-.rotate1{
-    transform: rotateY(180deg);
-}
-img{
-    border-radius: 5px; 
+
+img {
+    border-radius: 5px;
     display: none;
 }
 
+@keyframes cartas {
+    0%{ display: none; position: absolute;}
+    10%{ display: none;  position: absolute; transform: translate(15%,15%);}
+    20%{  display: none;  position: absolute;  transform: translate(-15%,-15%);}
+    30%{ display: none;  position: absolute;  transform: translate(15%,15%);}
+    40%{ display: none;  position: absolute;  transform: translate(15%,-15%); }
+    50%{ display: none; position: absolute; transform: translate(15%,-15%); }
+    60%{ display: none; position: absolute; transform: translate(-15%,-15%); }
+    70%{ display: none; position: absolute; transform: translate(-15%,-15%);}
+    80%{  display: none; position: absolute; transform: translate(15%,15%);}
+    90%{ display: none;  position: absolute;  transform: translate(15%,-15%);}
+    100%{  display: none;  position: absolute;}
+    
+    
+}
+
+@keyframes motion {
+    from{position: relative;  top: 0;  left: 0;  right: 0;  bottom: 0;}
+    to{position: initial;top:initial}
+    
+}
