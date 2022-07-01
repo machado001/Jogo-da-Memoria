@@ -6,6 +6,7 @@
     color: aliceblue;
     font-size: 40px;
 }
+
 /* styles */
 body {
     background-image: ;
@@ -13,27 +14,34 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(91,97,17);
-background: radial-gradient(circle, rgba(91,97,17,0.7315301120448179) 7%, rgba(158,133,32,0.9668242296918768) 28%, rgba(0,0,0,1) 99%);
+    background: rgb(91, 97, 17);
+    background: radial-gradient(circle, rgba(91, 97, 17, 0.7315301120448179) 7%, rgba(158, 133, 32, 0.9668242296918768) 28%, rgba(0, 0, 0, 1) 99%);
 }
 
 main {
+
     width: 600px;
-    /* border: 5px solid rgb(0, 0, 0); */
+    border: 2px solid rgb(0, 0, 0);
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: 8px;
+    border-radius: 5px;
+    background-image: url(https://wallpaperaccess.com/full/2222765.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+
 
 }
 
 div {
+    aspect-ratio: 3/4;
     padding: 40px;
     margin: 0 15px;
-    width: 80px;
-    height: 80px;
+    height: 100%;
+    max-height: 120px;
     background-color: rgb(45, 204, 204);
     border-radius: 5px;
     transition: 1s;
@@ -41,14 +49,19 @@ div {
     justify-content: center;
     align-items: center;
 }
-.rotate{
+
+.rotate {
     transform: rotateY(180deg);
-}
-.rotate1{
-    transform: rotateY(180deg);
-}
-img{
-    border-radius: 5px; 
-    display: none;
 }
 
+.rotate1 {
+    transform: rotateY(180deg);
+}
+
+img {
+    aspect-ratio: inherit;
+    height: 100%;
+    max-height: 120px;
+    border-radius: 5px;
+    display: none;
+}
