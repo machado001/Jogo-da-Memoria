@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(/images/sunny.png);
+    background-image: url(../images/sunny.png);
     background-size: cover;
 }
 
