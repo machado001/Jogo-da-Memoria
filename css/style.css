@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(https://wallpaperaccess.com/full/2222765.jpg);
+    background-image: url(/images/sunny.png);
     background-size: cover;
 }
 
@@ -33,7 +33,7 @@ main {
 }
 
 div {
-    background-image: url(https://seeklogo.com/images/M/mugiwara-logo-303FD55C54-seeklogo.com.png);
+    background-image: url(../images/skrull.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
