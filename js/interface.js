@@ -18,13 +18,16 @@ const duplicatedPersonagens = [...personagens, ...personagens]
 const virarCarta = ({ target }) => {
     const box = target;
     const boxClass = box.classList;
+    const className = boxClass.value.replace('box rotate', '');
     boxClass.add('rotate');
-    if (!divclick) {
+    if (divclick == false && box.className == box.className) {
         setTimeout(() => {
             let img = box.children[0]
             img.style.display = 'inline-block'
-
+           const box1 = target
+           console.log(box1)
         }, 295);
+
     }
 }
 const criarHTML = () => {
@@ -40,7 +43,7 @@ const criarHTML = () => {
             const img = document.createElement('img')
             div.classList.add(`a${j}`, 'box')
             img.classList.add(`a${j}`)
-            div.style.order = Math.floor(Math.random() * elementsDuplicated*(-1)) //random imgs
+            div.style.order = Math.floor(Math.random() * elementsDuplicated * (-1)) //random imgs
             img.src = `../images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
