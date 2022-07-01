@@ -9,26 +9,25 @@
 
 /* styles */
 body {
-    background-image: ;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(91, 97, 17);
-    background: radial-gradient(circle, rgba(91, 97, 17, 0.7315301120448179) 7%, rgba(158, 133, 32, 0.9668242296918768) 28%, rgba(0, 0, 0, 1) 99%);
+    background-image: url(https://wallpaperaccess.com/full/2222765.jpg);
 }
 
 main {
 
-    width: 600px;
+    width: 100%;
+    max-width: 800px;
     border: 2px solid rgb(0, 0, 0);
-    height: 500px;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch ;
+    justify-content: space-around;
     flex-wrap: wrap;
     border-radius: 5px;
-    background-image: url(https://wallpaperaccess.com/full/2222765.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: local;
@@ -50,6 +49,11 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
+}
+
+div:hover{
+    background-color: azure;
 }
 
 img {
@@ -58,7 +62,7 @@ img {
     display: none;
 }
 div, img {
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/5;
     max-height: 120px;
     border: 2px solid rgba(245, 245, 245, 0.541);
 
