@@ -40,7 +40,7 @@ const criarHTML = () => {
             div.classList.add(`a${j}`, 'box')
             img.classList.add(`a${j}`)
             div.style.order = Math.floor(Math.random() * elementsDuplicated) //random imgs
-            img.src = `/images/${personagens[j]}.png`
+            img.src = `./images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
         }
