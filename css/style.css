@@ -37,12 +37,14 @@ main {
 }
 
 div {
-    aspect-ratio: 3/4;
+    background-image: url(https://seeklogo.com/images/M/mugiwara-logo-303FD55C54-seeklogo.com.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
     padding: 40px;
     margin: 0 15px;
     height: 100%;
-    max-height: 120px;
-    background-color: rgb(45, 204, 204);
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
     transition: 1s;
     display: flex;
@@ -50,18 +52,21 @@ div {
     align-items: center;
 }
 
+img {
+    /* width: 100%; */
+    border-radius: 5px;
+    display: none;
+}
+div, img {
+    aspect-ratio: 3/4;
+    max-height: 120px;
+    border: 2px solid rgba(245, 245, 245, 0.541);
+
+}
 .rotate {
     transform: rotateY(180deg);
 }
 
 .rotate1 {
     transform: rotateY(180deg);
-}
-
-img {
-    aspect-ratio: inherit;
-    height: 100%;
-    max-height: 120px;
-    border-radius: 5px;
-    display: none;
 }
