@@ -71,3 +71,7 @@ img {
 .rotate {
     transform: rotateY(180deg);
 }
+
+.rotate1 {
+    transform: rotateY(-180deg);
+}

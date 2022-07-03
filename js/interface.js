@@ -14,31 +14,50 @@ const personagens = [
     'ace',
 ]
 const duplicatedPersonagens = [...personagens, ...personagens]
+let firstcard = null;
+let seccard = null;
+
 
 const virarCarta = ({ target }) => {
     const box = target;
     const boxClass = box.classList;
     const className = boxClass.value.replace('box rotate', '');
-    let firstcard = false
-    let seccard = false
-
-    // if (box.className.includes('rotate')) { return };
-    if (firstcard == false) {
+    const c = () => {
         boxClass.add('rotate');
-        firstcard = target;
         setTimeout(() => {
             let img = box.children[0]
             img.style.display = 'inline-block'
         }, 295)
-    } else if (seccard == false) {
-        boxClass.add('rotate');
-        seccard = target;
-        setTimeout(() => {
-            let img = box.children[0]
-            img.style.display = 'inline-block'
-        }, 295);
     }
 
+    if (box.className.includes('rotate')) { return };
+    if (firstcard == null) {
+        firstcard = target;
+        c();
+    } else if (seccard == null) {
+        seccard = target;
+        c();
+        if (seccard.className != firstcard.className) {
+            setTimeout(() => {
+                let img1 = seccard.children[0]
+                let img2 = firstcard.children[0]
+                setTimeout(() => {
+                    seccard.classList.add('rotate');
+                    firstcard.classList.add('rotate');
+                    img1.style.display = 'none'
+                    img2.style.display = 'none'
+                    firstcard.classList.remove('rotate')
+                    seccard.classList.remove('rotate')
+                    firstcard = null;
+                    seccard = null;
+                }, 400)
+            }, 295)
+        } else {
+            firstcard = null;
+            seccard = null;
+
+        }
+    }
 
 }
 const criarHTML = () => {
