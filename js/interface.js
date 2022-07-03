@@ -25,40 +25,47 @@ const virarCarta = ({ target }) => {
     const c = () => {
         boxClass.add('rotate');
         setTimeout(() => {
-            let img = box.children[0]
-            img.style.display = 'inline-block'
+            let img = box.firstChild
+            img.style.display = 'block'
         }, 295)
     }
 
-    if (box.className.includes('rotate')) { return };
     if (firstcard == null) {
         firstcard = target;
+        console.log(target)
         c();
+        if (firstcard.className.includes('rotate')) {
+            return;
+        };
     } else if (seccard == null) {
         seccard = target;
         c();
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
-                let img1 = seccard.children[0]
-                let img2 = firstcard.children[0]
+                let img1 = firstcard.firstChild
+                let img2 = seccard.firstChild
                 setTimeout(() => {
-                    seccard.classList.add('rotate');
                     firstcard.classList.add('rotate');
                     img1.style.display = 'none'
-                    img2.style.display = 'none'
                     firstcard.classList.remove('rotate')
+                    seccard.classList.add('rotate');
+                    img2.style.display = 'none'
                     seccard.classList.remove('rotate')
                     firstcard = null;
                     seccard = null;
                 }, 400)
             }, 295)
         } else {
-            firstcard = null;
-            seccard = null;
+            setTimeout(() => {
+                firstcard.style.opacity = '0.6'
+                seccard.style.opacity = '0.6'
+                firstcard = null;
+                seccard = null;
+            }, 500)
 
         }
     }
-
+    // if(box.firstChild.display ='inline-block') return;
 }
 const criarHTML = () => {
     const main = document.createElement('main')
@@ -79,12 +86,9 @@ const criarHTML = () => {
             div.appendChild(img)
         }
     }
-
     const divs = document.querySelectorAll('.box')
-
     divs.forEach(div => div.addEventListener('click', virarCarta))
 }
-
 document.addEventListener('DOMContentLoaded', criarHTML)
 //percorrer cada div e adicionar evento a todas elas
 //embaralhar cards
