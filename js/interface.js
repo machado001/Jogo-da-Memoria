@@ -1,4 +1,4 @@
-let divclick = false;
+'use strict'
 const personagens = [
     'kid',
     'luffy',
@@ -19,16 +19,27 @@ const virarCarta = ({ target }) => {
     const box = target;
     const boxClass = box.classList;
     const className = boxClass.value.replace('box rotate', '');
-    boxClass.add('rotate');
-    if (divclick == false && box.className == box.className) {
+    let firstcard = false
+    let seccard = false
+
+    // if (box.className.includes('rotate')) { return };
+    if (firstcard == false) {
+        boxClass.add('rotate');
+        firstcard = target;
         setTimeout(() => {
             let img = box.children[0]
             img.style.display = 'inline-block'
-           const box1 = target
-           console.log(box1)
+        }, 295)
+    } else if (seccard == false) {
+        boxClass.add('rotate');
+        seccard = target;
+        setTimeout(() => {
+            let img = box.children[0]
+            img.style.display = 'inline-block'
         }, 295);
-
     }
+
+
 }
 const criarHTML = () => {
     const main = document.createElement('main')
@@ -44,7 +55,7 @@ const criarHTML = () => {
             div.classList.add(`a${j}`, 'box')
             img.classList.add(`a${j}`)
             div.style.order = Math.floor(Math.random() * elementsDuplicated * (-1)) //random imgs
-            img.src = `../images/${personagens[j]}.png`
+            img.src = `./images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
         }
