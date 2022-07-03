@@ -17,12 +17,11 @@ const duplicatedPersonagens = [...personagens, ...personagens]
 let firstcard = null;
 let seccard = null;
 
-
 const virarCarta = ({ target }) => {
     const box = target;
     const boxClass = box.classList;
     const className = boxClass.value.replace('box rotate', '');
-    const c = () => {
+    const show = () => {
         boxClass.add('rotate');
         setTimeout(() => {
             let img = box.firstChild
@@ -33,24 +32,26 @@ const virarCarta = ({ target }) => {
     if (firstcard == null) {
         firstcard = target;
         console.log(target)
-        c();
+        show();
         if (firstcard.className.includes('rotate')) {
             return;
         };
     } else if (seccard == null) {
         seccard = target;
-        c();
+        show();
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
                 let img1 = firstcard.firstChild
                 let img2 = seccard.firstChild
+                function showAndHid(card, className, display, img) {
+                    card.classList.add(className);
+                    img.style.display = display;
+                    card.classList.remove(className);
+                    return;
+                }
                 setTimeout(() => {
-                    firstcard.classList.add('rotate');
-                    img1.style.display = 'none'
-                    firstcard.classList.remove('rotate')
-                    seccard.classList.add('rotate');
-                    img2.style.display = 'none'
-                    seccard.classList.remove('rotate')
+                    showAndHid(firstcard, 'rotate', 'none', img1)
+                    showAndHid(seccard, 'rotate', 'none', img2)
                     firstcard = null;
                     seccard = null;
                 }, 400)

@@ -28,8 +28,6 @@ main {
     justify-content: space-evenly;
     flex-wrap: wrap;
     border-radius: 5px;
-
-
 }
 
 div {
@@ -37,7 +35,6 @@ div {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    /* padding: 40px; */
     margin: 0 15px;
     height: 100%;
     background-color: rgb(0, 0, 0);
@@ -57,7 +54,6 @@ div:hover {
 img {
     border-radius: 5px;
     display: none;
-
 }
 
 div,
@@ -65,16 +61,12 @@ img {
     aspect-ratio: 3/4;
     border: 2px solid rgba(245, 245, 245, 0.541);
     max-height: 120px;
-
 }
 
 .rotate {
     transform: rotateY(180deg);
 }
 
-.rotate1 {
-    transform: rotateY(-180deg);
-}
 
 @media screen and (max-width:530px) {
     div {
@@ -85,7 +77,5 @@ img {
     div,
     img {
         max-height: 90px;
-    }
-    
-    
+    }  
 }
