@@ -32,14 +32,9 @@ const virarCarta = ({ target }) => {
 
     if (firstcard == null) {
         firstcard = target;
-        console.log(firstcard)
         show();
-        if (firstcard.className.includes('rotate')) {
-            return
-        }
     } else if (seccard == null) {
         seccard = target;
-        if (firstcard == seccard) return
         show();
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
