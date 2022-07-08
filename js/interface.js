@@ -20,24 +20,26 @@ let seccard = null;
 const virarCarta = ({ target }) => {
     const box = target;
     const boxClass = box.classList;
-    const className = boxClass.value.replace('box rotate', '');
+    const img = box.firstChild
+
     const show = () => {
         boxClass.add('rotate');
+
         setTimeout(() => {
-            let img = box.firstChild
             img.style.display = 'block'
         }, 295)
     }
 
     if (firstcard == null) {
         firstcard = target;
-        console.log(target)
+        console.log(firstcard)
         show();
         if (firstcard.className.includes('rotate')) {
-            return;
-        };
+            return
+        }
     } else if (seccard == null) {
         seccard = target;
+        if (firstcard == seccard) return
         show();
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
@@ -45,7 +47,11 @@ const virarCarta = ({ target }) => {
                 let img2 = seccard.firstChild
                 function showAndHid(card, className, display, img) {
                     card.classList.add(className);
-                    img.style.display = display;
+                    function imgstyledisplay() {
+                        return setTimeout(() => img.style.display = display, 290)
+                    }
+                    imgstyledisplay()
+                    // img.style.display = display;
                     card.classList.remove(className);
                     return;
                 }
@@ -66,7 +72,6 @@ const virarCarta = ({ target }) => {
 
         }
     }
-    // if(box.firstChild.display ='inline-block') return;
 }
 const criarHTML = () => {
     const main = document.createElement('main')
@@ -93,14 +98,7 @@ const criarHTML = () => {
 document.addEventListener('DOMContentLoaded', criarHTML)
 //percorrer cada div e adicionar evento a todas elas
 //embaralhar cards
-function embaralhar() {
-    let elementsDuplicated = duplicatedPersonagens.length
-    for (let i = 0; i < elementsDuplicated; i++) {
-        const div = document.querySelector(`.a${i}`)
-        console.log(div)
-        div.style.order = Math.floor(Math.random() * elementsDuplicated)
-    }
-}
+
 
 
 
