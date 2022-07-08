@@ -46,7 +46,6 @@ const virarCarta = ({ target }) => {
                         return setTimeout(() => img.style.display = display, 290)
                     }
                     imgstyledisplay()
-                    // img.style.display = display;
                     card.classList.remove(className);
                     return;
                 }
@@ -91,8 +90,6 @@ const criarHTML = () => {
     divs.forEach(div => div.addEventListener('click', virarCarta))
 }
 document.addEventListener('DOMContentLoaded', criarHTML)
-//percorrer cada div e adicionar evento a todas elas
-//embaralhar cards
 
 
 
