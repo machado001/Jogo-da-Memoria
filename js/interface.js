@@ -24,11 +24,11 @@ const virarCarta = ({ target }) => {
 
     const show = () => {
         boxClass.add('rotate');
-
         setTimeout(() => {
             img.style.display = 'block'
         }, 295)
     }
+    if (img.click()) return;
 
     if (firstcard == null) {
         firstcard = target;
@@ -73,11 +73,11 @@ const virarCarta = ({ target }) => {
         }
     }
 }
+
 const criarHTML = () => {
     const main = document.createElement('main')
     const body = document.querySelector('body')
     const elementsDuplicated = duplicatedPersonagens.length
-    main.id = 'table'
     body.insertAdjacentElement('afterbegin', main)
     //criar
     for (let i = 0; i < 2; i++) {
