@@ -28,6 +28,7 @@ const virarCarta = ({ target }) => {
             img.style.display = 'block'
         }, 295)
     }
+    
     if (img.click()) return;
 
     if (firstcard == null) {
