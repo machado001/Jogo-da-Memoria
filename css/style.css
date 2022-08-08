@@ -18,11 +18,12 @@ body {
 }
 
 main {
+
     width: 100%;
     max-width: 800px;
     /* border: 2px solid rgb(0, 0, 0); */
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
@@ -30,7 +31,7 @@ main {
     border-radius: 5px;
 }
 
-div {
+div.box {
     background-image: url(../images/skrull.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -46,7 +47,7 @@ div {
     align-content: space-between;
 }
 
-div:hover {
+div.box:hover {
     background-color: azure;
     cursor: url(../images/skrull.png), auto;
 }
@@ -56,7 +57,7 @@ img {
     display: none;
 }
 
-div,
+div.box,
 img {
     aspect-ratio: 3/4;
     border: 2px solid rgba(245, 245, 245, 0.541);
@@ -69,13 +70,68 @@ img {
 
 
 @media screen and (max-width:530px) {
-    div {
+    div.box {
         margin: 15px;
         padding: 10px;
     }
 
-    div,
+    div.box,
     img {
         max-height: 90px;
-    }  
+    }
+}
+
+.container {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    border: 5px solid rgba(245, 245, 245, 0.541);
+    background: rgb(49, 40, 149);
+    background: radial-gradient(circle, rgba(49, 40, 149, 1) 5%, rgba(0, 78, 153, 1) 100%);
+    border-radius: 20px;
+}
+
+button.btn {
+    background-color: rgba(255, 255, 255, 0.349);
+    width: 40%;
+    padding: 12px;
+    transition: all 0.3s;
+    border-radius: 6px;
+
+    color: black
+}
+
+button.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(252, 2, 2, 0.349);
+    transform: scale(1.1);
+}
+
+
+img.photo {
+    width: 100%;
+    height: 100%;
+    display: inline;
+}
+
+section {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    /* color: black; */
+}
+
+section.right-content h1 {
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+div.container.end {
+    font-size: 2em;
 }
