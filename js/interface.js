@@ -13,6 +13,9 @@ const personagens = [
     'sabo',
     'ace',
 ]
+const btnStart = document.querySelector('#start');
+const btnRestart = document.querySelector('#restart');
+const divStart = document.querySelector('.container');
 const duplicatedPersonagens = [...personagens, ...personagens]
 let firstcard = null;
 let seccard = null;
@@ -28,7 +31,7 @@ const virarCarta = ({ target }) => {
             img.style.display = 'block'
         }, 295)
     }
-    
+
     if (img.click()) return;
 
     if (firstcard == null) {
@@ -67,14 +70,41 @@ const virarCarta = ({ target }) => {
 
         }
     }
+    // const divs = document.querySelectorAll('div.box')
+    // const d = Array.from(divs).forEach(div => {
+    //     setTimeout(() => {
+    //         div.classList.add('rotate')
+    //     }, 4000)
+    // }
+    // )
+    // const x = Array.from(divs).every(div => div.className.includes('rotate'))
+    // if (x === true) {
+    //     console.log('gosei')
+    //     const containerStart = document.querySelector('div.container.start');
+    //     const finalContainer = document.createElement('div');
+    //     finalContainer.classList.add('container', 'end')
+    //     containerStart.insertAdjacentElement("afterend", finalContainer);
+    //     console.log(containerStart.insertAdjacentElement("afterend", finalContainer))
+    //     finalContainer.innerHTML = ` <section class="left-content">
+    //                                  <img class="photo" src="images/nico-robin-reading.png" alt="">
+    //                                  </section>
+    //                                  <section class="right-content">
+    //                                         <h1>Game Over</h1>
+    //                                         <p id="tempoLevado">Tempo levado: <span id="act-time">${cronometro()}</span></p>
+    //                                         <p id="melhorTempo">Seu melhor Tempo: <span id="best-time">Y</span></p>
+    //                                         <button class="btn" id="restart">Reiniciar</button>
+    //                                  </section>`
+    // }
 }
 
 const criarHTML = () => {
+    divStart.style.display = 'none';
     const main = document.createElement('main')
     const body = document.querySelector('body')
     const elementsDuplicated = duplicatedPersonagens.length
     body.insertAdjacentElement('afterbegin', main)
     //criar
+    let divs = []
     for (let i = 0; i < 2; i++) {
         for (let j = 0; j < personagens.length; j++) {
             const div = document.createElement('div')
@@ -85,12 +115,84 @@ const criarHTML = () => {
             img.src = `./images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
+            divs.push(div)
         }
     }
-    const divs = document.querySelectorAll('.box')
-    divs.forEach(div => div.addEventListener('click', virarCarta))
+    // const divs = document.querySelectorAll('.box');
+    divs.forEach(div => {
+        main.style.display = 'flex';
+        div.addEventListener('click', virarCarta)
+    })
+
+
+
+
 }
-document.addEventListener('DOMContentLoaded', criarHTML)
+
+
+const cronometro = () => {
+    const span = document.createElement('span')
+    const spanAct = document.querySelector('#act-time')
+    let min = 0;
+    let sec = 0;
+    let crom = null;
+    return setInterval(() => {
+        sec += 1;
+        if (sec < 10) {
+            crom = `0${min}:0${sec}`
+        } else if (sec >= 10) {
+            crom = `0${min}:${sec}`
+        }
+
+        if (sec == 60) {
+            sec = 0;
+            min += 1;
+            crom = `0${min}:0${sec}`
+        }
+        if (min >= 10) {
+            crom = `${min}:${sec}`
+        }
+        console.log(crom)
+        return crom
+    }, 1000);
+}
+btnStart.addEventListener('click', criarHTML)
+btnStart.addEventListener('click', cronometro)
+// btnRestart.addEventListener('click',restart)
+
+function endGame() {
+    const divs = document.querySelectorAll('div.box')
+    const d = Array.from(divs).forEach(div => {
+        setTimeout(() => {
+            div.classList.add('rotate')
+        }, 4000)
+    }
+    )
+    const x = Array.from(divs).every(div => div.className.includes('rotate'))
+
+    if (x === true) {
+        console.log('gosei')
+        const containerStart = document.querySelector('div.container.start');
+        const finalContainer = document.createElement('div');
+        finalContainer.classList.add('container', 'end')
+        containerStart.insertAdjacentElement("afterend", finalContainer);
+        console.log(containerStart.insertAdjacentElement("afterend", finalContainer))
+        finalContainer.innerHTML = ` <section class="left-content">
+                                     <img class="photo" src="images/nico-robin-reading.png" alt="">
+                                     </section>
+                                     <section class="right-content">
+                                            <h1>Game Over</h1>
+                                            <p id="tempoLevado">Tempo levado: <span id="act-time">${cronometro()}</span></p>
+                                            <p id="melhorTempo">Seu melhor Tempo: <span id="best-time">Y</span></p>
+                                            <button class="btn" id="restart">Reiniciar</button>
+                                     </section>`
+    }
+}
+
+
+
+
+
 
 
 
