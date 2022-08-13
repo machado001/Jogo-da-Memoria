@@ -1,0 +1,65 @@
+* {
+    font-family: 'Titan One', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main#square {
+    background-image: url(../images/sunny.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-and-h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 200px; ;
+    margin-bottom: 20px;
+    /* background-color: aquamarine; */
+}
+
+img {
+    width: 90%;
+    transform: translateX(10px);
+}
+h1 {
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    /* transform: translateX(-5px); */
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+button#btn-start {
+    margin-top: 9px;
+    padding: 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    width: 100%;
+    transition: all 0.3s;
+}
+/* button#btn-start{
+    margin-left: 10px;
+    transition:all 0.3s;
+} */
+
+button#btn-start:hover {
+    background-color: rgb(212, 26, 26);
+    transform: scale(1.1);
+    cursor: pointer;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+
+}

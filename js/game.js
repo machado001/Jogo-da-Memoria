@@ -28,8 +28,9 @@ const virarCarta = ({ target }) => {
             img.style.display = 'block'
         }, 295)
     }
-    
-    if (img.click()) return;
+
+    img.click = () => false;
+    if (img.click()) return
 
     if (firstcard == null) {
         firstcard = target;
@@ -64,8 +65,19 @@ const virarCarta = ({ target }) => {
                 firstcard = null;
                 seccard = null;
             }, 500)
-
         }
+    }
+    const divs = document.querySelectorAll('div.box')
+    endGame(divs)
+}
+
+function endGame(divs) {
+    let x = Array.from(divs).every(div => div.className.includes('rotate'))
+    if (x === true) {
+        setTimeout(() => {
+            console.log('gosa cmg gosa')
+            return alert(`O jogo acabou! Atualize a página para jogar novamente ! `)
+        }, 700)
     }
 }
 
@@ -82,7 +94,7 @@ const criarHTML = () => {
             div.classList.add(`a${j}`, 'box')
             img.classList.add(`a${j}`)
             div.style.order = Math.floor(Math.random() * elementsDuplicated * (-1)) //random imgs
-            img.src = `./images/${personagens[j]}.png`
+            img.src = `../images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
         }
@@ -91,7 +103,6 @@ const criarHTML = () => {
     divs.forEach(div => div.addEventListener('click', virarCarta))
 }
 document.addEventListener('DOMContentLoaded', criarHTML)
-
 
 
 

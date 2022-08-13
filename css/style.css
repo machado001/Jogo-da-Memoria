@@ -18,16 +18,17 @@ body {
 }
 
 main {
-    width: 100%;
+    /* padding: 80px; */
     max-width: 800px;
     /* border: 2px solid rgb(0, 0, 0); */
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
     border-radius: 5px;
+    /* background-color: aqua; */
 }
 
 div {
@@ -77,5 +78,16 @@ img {
     div,
     img {
         max-height: 90px;
+    }  
+}
+@media screen and (max-width:724px) {
+    div {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    div,
+    img {
+        max-height: 80px;
     }  
 }
