@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 main#square {
     background-image: url(../images/sunny.png);
     background-repeat: no-repeat;
@@ -22,7 +23,8 @@ main#square {
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 200px; ;
+    max-width: 200px;
+    ;
     margin-bottom: 20px;
     /* background-color: aquamarine; */
 }
@@ -31,13 +33,15 @@ img {
     width: 90%;
     transform: translateX(10px);
 }
+
 h1 {
     font-size: 3rem;
     color: rgb(255, 255, 255);
     /* transform: translateX(-5px); */
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
-button#btn-start {
+
+a {
     margin-top: 9px;
     padding: 8px;
     border-radius: 5px;
@@ -45,21 +49,21 @@ button#btn-start {
     border: 1px solid black;
     width: 100%;
     transition: all 0.3s;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    background-color: aqua;
 }
+
 /* button#btn-start{
     margin-left: 10px;
     transition:all 0.3s;
 } */
 
-button#btn-start:hover {
+a#btn-start:hover {
     background-color: rgb(212, 26, 26);
     transform: scale(1.1);
     cursor: pointer;
-    
-}
-a{
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
 
 }
+
