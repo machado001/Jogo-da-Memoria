@@ -31,34 +31,25 @@ const virarCarta = ({ target }) => {
 
     img.click = () => false;
     if (img.click()) return
-    // if (seccard === firstcard && seccard != null || firstcard != null) return
 
     if (firstcard == null) {
         firstcard = target;
-        firstcard.removeEventListener("click",virarCarta)
+        firstcard.removeEventListener("click", virarCarta)
         showImg();
         return
     } else if (seccard == null) {
         seccard = target;
-        firstcard.addEventListener('click',virarCarta)
+        firstcard.addEventListener('click', virarCarta)
         showImg()
 
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
                 let img1 = firstcard.firstChild
                 let img2 = seccard.firstChild
-                function showAndHid(card, className, display, img) {
-                    card.classList.add(className);
-                    function imgstyledisplay() {
-                        return setTimeout(() => img.style.display = display, 290)
-                    }
-                    imgstyledisplay()
-                    card.classList.remove(className);
-                    return;
-                }
+
                 setTimeout(() => {
-                    showAndHid(firstcard, 'rotate', 'none', img1)
-                    showAndHid(seccard, 'rotate', 'none', img2)
+                    showAndHidImg(firstcard, 'rotate', 'none', img1)
+                    showAndHidImg(seccard, 'rotate', 'none', img2)
                     firstcard = null;
                     seccard = null;
                 }, 400)
@@ -76,14 +67,14 @@ const virarCarta = ({ target }) => {
     endGame(divs)
 }
 
-function endGame(divs) {
-    let x = Array.from(divs).every(div => div.className.includes('rotate'))
-    if (x === true) {
-        setTimeout(() => {
-            console.log('gosa cmg gosa')
-            return alert(`O jogo acabou! Atualize a página para jogar novamente ! `)
-        }, 700)
+function showAndHidImg(card, className, display, img) {
+    card.classList.add(className);
+    function imgstyledisplay() {
+        return setTimeout(() => img.style.display = display, 290)
     }
+    imgstyledisplay()
+    card.classList.remove(className);
+    return;
 }
 
 const criarHTML = () => {
@@ -107,7 +98,17 @@ const criarHTML = () => {
     const divs = document.querySelectorAll('.box')
     divs.forEach(div => div.addEventListener('click', virarCarta))
 }
+
 document.addEventListener('DOMContentLoaded', criarHTML)
+
+function endGame(divs) {
+    let x = Array.from(divs).every(div => div.className.includes('rotate'))
+    if (x === true) {
+        setTimeout(() => {
+            return alert(`O jogo acabou! Atualize a página para jogar novamente! `)
+        }, 700)
+    }
+}
 
 
 
