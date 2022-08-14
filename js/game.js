@@ -22,7 +22,7 @@ const virarCarta = ({ target }) => {
     const boxClass = box.classList;
     const img = box.firstChild
 
-    const show = () => {
+    const showImg = () => {
         boxClass.add('rotate');
         setTimeout(() => {
             img.style.display = 'block'
@@ -31,13 +31,18 @@ const virarCarta = ({ target }) => {
 
     img.click = () => false;
     if (img.click()) return
+    // if (seccard === firstcard && seccard != null || firstcard != null) return
 
     if (firstcard == null) {
         firstcard = target;
-        show();
+        firstcard.removeEventListener("click",virarCarta)
+        showImg();
+        return
     } else if (seccard == null) {
         seccard = target;
-        show();
+        firstcard.addEventListener('click',virarCarta)
+        showImg()
+
         if (seccard.className != firstcard.className) {
             setTimeout(() => {
                 let img1 = firstcard.firstChild
