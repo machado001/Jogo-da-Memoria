@@ -69,12 +69,10 @@ const virarCarta = ({ target }) => {
 
 function showAndHidImg(card, className, display, img) {
     card.classList.add(className);
-    function imgstyledisplay() {
+    (function imgStyleDisplay() {
         return setTimeout(() => img.style.display = display, 290)
-    }
-    imgstyledisplay()
+    }())
     card.classList.remove(className);
-    return;
 }
 
 const criarHTML = () => {
@@ -89,7 +87,7 @@ const criarHTML = () => {
             const img = document.createElement('img')
             div.classList.add(`a${j}`, 'box')
             img.classList.add(`a${j}`)
-            div.style.order = Math.floor(Math.random() * elementsDuplicated * (-1)) //random imgs
+            randomCards(div, elementsDuplicated) //random cards
             img.src = `../images/${personagens[j]}.png`
             main.appendChild(div)
             div.appendChild(img)
@@ -97,6 +95,9 @@ const criarHTML = () => {
     }
     const divs = document.querySelectorAll('.box')
     divs.forEach(div => div.addEventListener('click', virarCarta))
+}
+function randomCards(div, arrDuplicated) {
+    return div.style.order = Math.floor(Math.random() * arrDuplicated * (-1))
 }
 
 document.addEventListener('DOMContentLoaded', criarHTML)
