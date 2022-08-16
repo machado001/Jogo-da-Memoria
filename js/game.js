@@ -102,14 +102,43 @@ function randomCards(div, arrDuplicated) {
 
 document.addEventListener('DOMContentLoaded', criarHTML)
 
+let min = 0;
+let sec = 0;
+let crom = null;
+const tempo = () => {
+    sec += 1;
+    if (sec < 10) {
+        crom = `0${min}:0${sec}`
+    } else if (sec >= 10) {
+        crom = `0${min}:${sec}`
+    }
+    if (sec == 60) {
+        sec = 0;
+        min += 1;
+        crom = `0${min}:0${sec}`
+    }
+    if (min >= 10) {
+        crom = `${min}:${sec}`
+    }
+    console.log(crom)
+    return crom
+};
+setInterval(tempo,1000)
+
 function endGame(divs) {
     let x = Array.from(divs).every(div => div.className.includes('rotate'))
     if (x === true) {
         setTimeout(() => {
-            return alert(`O jogo acabou! Atualize a página para jogar novamente! `)
+            return alert(`O jogo acabou! Atualize a página para jogar novamente! Tempo de jogo: ${tempo()}! `)
         }, 700)
     }
 }
+
+
+
+
+
+
 
 
 
