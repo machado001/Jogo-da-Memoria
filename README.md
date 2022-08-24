@@ -1,6 +1,6 @@
-<h1>Getting Started - Jogo da Memória()</h1>
+<h1>Getting Started - Jogo da Memória</h1>
 <br>
-<p>Eis um joguinho da memória. Também foi o primeiro projeto meio complicadinho que consegui resolver por conta própria, foi com ele que tive os primeiros feelings de como é ser um programador: Saber pesquisar, ficar horas num erro bobo e resolvê-lo em menos de uma linha, e por ai vai... </p>
+<p>Eis um joguinho da memória . Também foi o primeiro projeto meio complicadinho que consegui resolver por conta própria, foi com ele que tive os primeiros feelings de como é ser um programador: Saber pesquisar, ficar horas num erro bobo e resolvê-lo em menos de uma linha, e por ai vai... </p>
 <p><a href="https://machado001.github.io/Jogo-da-Memoria/"><strong><em>Jogue aqui!</em></strong></a></p>
 <p><strong>Feito com Javascript Vanilla; Sem react aqui.<strong/></p>
 
