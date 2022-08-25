@@ -11,7 +11,7 @@
 
 <ul>
 <h3>Javascript:</h3>
-<li>Desctructuring;</li>
+<li>Destructuring;</li>
 <li>Spread operator;</li>
 <li>Assíncronissidade com setTimeOut() e setInterval();</li>
 <li>Callbacks;</li>
